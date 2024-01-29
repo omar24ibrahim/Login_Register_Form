@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+    <head>
+        <title>Login Form</title>
+        <link rel="stylesheet" href="styling_login.css">
+        <script src="back_login.js"></script>
+        <script>
+            function wrong()
+            {
+                e = document.getElementById("email");
+                p = document.getElementById("password");
+                ec = document.getElementById("emailCap");
+                pc = document.getElementById("passwordCap");
+                url = document.URL;
+                text = url.split("?");
+                if(text.length > 1)
+                {
+                    if(text[1] == "*")
+                    {
+                        alert("Some fields are not filled.");
+                    }
+                    else
+                    {
+                        e.value = text[1];
+                        if(text.length == 3)
+                        {
+                            p.value = text[2];
+                            p.style.borderColor = "red";
+                            pc.innerHTML = pc.innerHTML + "<span style='color:red;'> Wrong password</span>";
+                        }
+                        else
+                        {
+                            e.style.borderColor = "red";
+                            ec.innerHTML = ec.innerHTML + "<span style='color:red;'> Not registered</span>";
+                        }
+                        history.replaceState({id: "1"},"Login Form", text[0]);
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body onload="wrong()">
+        <form name="login" id="login_form" action="login_result.php" method="post">
+            <h2 id="header2">Login</h2>
+            <label id="emailCap">Email</label>
+            <br>
+            <input name="email" id="email" type="text" onclick="resetEmail()">
+            <br><br><br>
+            <label id="passwordCap">Password</label>
+            <br>
+            <input name="password" id="password" type="password" onclick="resetPassword()">
+            <input id="show" type="button" onclick="showPassword()" value="&#128065;">
+            <br><p>Don't have an account? <a href="register.html">Sign Up</a></p>
+            <input id="login" type="button" onclick="isValid()" value="Login">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+body{
+    background-color: rgb(230, 230, 230);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+#reg_form{
+    border: 2px solid black;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, rgb(133, 79, 133), rgb(255, 136, 0));
+    color: white;
+    padding: 5px;
+    width: 260px;
+    height: 435px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+#email, #name{
+    width: 250px;
+    height: 15px;
+    font-size: large;
+}
+#password1, #password2{
+    width: 215px;
+    height: 15px;
+    font-size: medium;
+}
+#show1, #show2{
+    background-color: white;
+    border: none;
+    text-align: center;
+    opacity: 0.8;
+}
+#show1:hover, #show2:hover{
+    cursor: pointer;
+    opacity: 1.0;
+}
+#signup{
+    background-color: rgb(200, 200, 200);
+    color: black;
+    float: right;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+#signup:hover{
+    background-color: rgb(0, 119, 255);
+    color: white;
+    cursor: pointer;
+}
+#header2{
+    text-align: center;
+}
+label{
+    font-size: large;
+}

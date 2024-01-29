@@ -1,0 +1,37 @@
+body{
+    background-color: rgb(230, 230, 230);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+#button{
+    background-color: rgb(200, 200, 200);
+    color: black;
+    float: right;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+#button:hover{
+    background-color: rgb(0, 119, 255);
+    color: white;
+    cursor: pointer;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+form{
+    /*border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(5, 113, 126);
+    color: white;
+    padding: 5px;*/
+    width: 200px;
+    height: 45px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

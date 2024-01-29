@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<?php
+    session_start();
+?>
+<html>
+    <head>
+        <title>Register Form</title>
+        <link rel="stylesheet" href="styling_register.css">
+        <script src="back_register.js"></script>
+        <script>
+            function registered()
+            {
+                e = document.getElementById("email");
+                ec = document.getElementById("emailCap");
+                url = document.URL;
+                text = url.split("?");
+                if(text.length > 1)
+                {
+                    if(text[1] == "*")
+                    {
+                        alert("Some fields are not filled.");
+                    }
+                    else
+                    {
+                        console.log(text[0]);
+                        e.value = text[1];
+                        e.style.borderColor = "red";
+                        ec.innerHTML = ec.innerHTML + "<span style='color:red;'> Already registered</span>";
+                        history.replaceState({id: "1"},"Register Form", text[0]);
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body onload="registered()">
+        <form name="register" id="reg_form" action="register_result.php" method="post">
+            <h2 id="header2">Sign Up</h2>
+            <label id="emailCap">Email</label>
+            <br>
+            <input name="email" id="email" type="text" onclick="resetEmail()">
+            <br><br><br>
+            <label>Name</label>
+            <br>
+            <input name="name" id="name" type="text" onclick="resetName()">
+            <br><br><br>
+            <label id="passwordCap">Password</label>
+            <br>
+            <input name="password" id="password1" type="password" onclick="resetPassword(1)">
+            <input id="show1" type="button" onclick="showPassword(1)" value="&#128065;">
+            <br><br><br>
+            <label>Confirm Password</label>
+            <br>
+            <input id="password2" type="password" onclick="resetPassword(2)">
+            <input id="show2" type="button" onclick="showPassword(2)" value="&#128065;">
+            <br><p>Already have an account? <a href="login.html">Login</a></p>
+            <input id="signup" type="button" onclick="isValid()" value="Sign Up">
+        </form>
+        
+    </body>
+</html>
